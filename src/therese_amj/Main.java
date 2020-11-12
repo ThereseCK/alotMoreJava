@@ -14,7 +14,6 @@ public class Main {
         var fly2 = new Fly("bil", 20.00, 90, 8, 20, 20, TransportKlasse.lettKjøretøy );
 
         fly1.StartFly();
-        fly1.toStringOptional(StringBuilder(fly1));
         System.out.println(fly1);
         System.out.println(fly2);
 
