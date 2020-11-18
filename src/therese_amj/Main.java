@@ -3,23 +3,42 @@ package therese_amj;
 public class Main {
 
     public static void main(String[] args) {
-        var test = new Kjøretøy( "båt2", 2002.2, 202, TransportKlasse.jetfly);
-        var test2 = new Kjøretøy( "båt", 2002.2, 202, TransportKlasse.jetfly);
+        var plane = new Fly("LN1234", 1000, 30, 2, 10);
+        System.out.println(plane.PrintInformation());
+        System.out.println(plane.Run());
 
-        System.out.println(test);
-        System.out.println(test2);
-        test.Sammenligne(test2, "er kjøretøyene like? ");
+        var boat = new Båt("ABC123", 100, 30, "Knop", 300);
+        System.out.println(boat.PrintInformation());
+        System.out.println(boat.Run());
 
-        var fly1 = new Fly("bil", 20.00, 90, 8, 20, 20, TransportKlasse.lettKjøretøy );
-        var fly2 = new Fly("bil", 20.00, 90, 8, 20, 20, TransportKlasse.lettKjøretøy );
+        var car1 = new Bil(
+                "NF123456",
+                147,
+                200,
+                "KM/T",
+                "grønn",
+                true);
+        car1.PrintInformation();
 
-        fly1.StartFly();
-        System.out.println(fly1);
-        System.out.println(fly2);
+        var car2 = new Bil(
+                "NF654321",
+                150,
+                195,
+                "km/t",
+                "blå",
+                true);
 
-        fly1.Sammenligne(fly2, "er kjøretøyene like? ");
+        System.out.println(car1.PrintInformation());
+        System.out.println(car1.Run());
+
+        System.out.println(car2.PrintInformation());
+        System.out.println(car2.Run());
 
 
+
+        var testing = new KjøretøyMaxFart("obs", 8769, 98, "knop");
+
+        System.out.println(testing.PrintInformation());
     }
 
 

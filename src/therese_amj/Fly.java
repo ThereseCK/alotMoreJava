@@ -1,37 +1,31 @@
 package therese_amj;
 
-public class Fly extends  Kjøretøy {
-    public double VingeSpenn;
-    public double Lasteevne;
-    public double EgenVekt;
+public  class Fly extends Kjøretøy {
+    public int WingSpan;
+    public int LoadCapacity;
+    public int Weight;
 
 
-    public Fly(String kjennemerke, double vingespenn, double lasteevne, double egenVekt,  double effekt, double maksFart, TransportKlasse type) {
-        super(kjennemerke, effekt, maksFart, type);
-        this.VingeSpenn = vingespenn;
-        this.Lasteevne = lasteevne;
-        this.EgenVekt = egenVekt;
-    }
-    public void Test(){
-
-        Enheter.put("vingespenn", "m");
-        Enheter.put("Lasteevne: ", "tonn");
-        Enheter.put("Egenvekt: ", "tonn");
+    protected Fly(String regNo, int effect, int wingSpan, int loadCapacity, int weight) {
+        super(regNo, effect);
+        this.WingSpan = wingSpan;
+        this.LoadCapacity = loadCapacity;
+        this.Weight = weight;
     }
 
-    public void toStringOptional(StringBuilder text)
+    public String PrintInformation()
     {
-        super.toStringOptional(text);
-        Add(text,"vingespenn: ", VingeSpenn);
-        Add(text, "lasteevne", Lasteevne);
-        Add(text, "egenvekt: ", EgenVekt);
+        var superText = super.PrintInformation();
+        return " ** Fly **  \n"+
+                    superText +
+                "\n - Vingespenn " + WingSpan + "m \n"+
+                " - Vingespenn " + LoadCapacity + "tonn\n"+
+                " - Vingespenn " + Weight + "tonn";
     }
 
-    public void StartFly()
+    public String Run()
     {
-        System.out.println("fly " + Kjennemerke + " har fått bedskjed om å fly ! " );
-       System.out.println("-----------------------------");
-
+        return "Nå Tar flyet av!!!";
     }
 }
 
